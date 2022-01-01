@@ -30,7 +30,21 @@
         return degrees * Math.PI / 180;
       };
 
-      ctx.fillStyle = 'rgb(255,0,0)';
+      function drawfireworks(x,y,size) {
+        ctx.fillStyle = 'rgb(255,0,0)';
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        
+        let angle = 0;
+        while (angle < 360){
+          ctx.lineTo(size * Math.sin(degToRad(angle)),size * Math.cos(degToRad(angle)));
+          ctx.moveTo(x,y);
+          angle += 10;
+
+        }
+      };
+
+      drawfireworks(200,200,100);
       ctx.beginPath();
       ctx.moveTo(50,50);
       ctx.lineTo(150,50);
