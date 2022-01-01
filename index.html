@@ -54,7 +54,7 @@
       function drawfireline(x,y,strokecolor){
         ctx.lineWidth = 5;
         ctx.beginPath();
-        ctx.moveTo(x,400);
+        ctx.moveTo(x,y+20);
         ctx.lineTo(x,y)
         ctx.strokeStyle = 'rgb(' + Math.floor((y-200)*255/200) + ', 0, 0)';
         ctx.stroke();
