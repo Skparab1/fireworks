@@ -65,6 +65,8 @@
         setTimeout(() => {ctx.lineTo(x,y+400-(9*y/10))}, startingdelay+100*9);
         setTimeout(() => {ctx.lineTo(x,400)}, startingdelay+100*10);
         ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgb(255,0,0)';
+        ctx.stroke();
 
         setTimeout(() => { drawfireworks(x,y,1*plusby); }, startingdelay+100*1/plusby);
         setTimeout(() => { drawfireworks(x,y,2*plusby); }, startingdelay+100*2/plusby);
