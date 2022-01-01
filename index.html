@@ -52,6 +52,20 @@
       };
 
       function animatefirework(x,y,startingdelay,plusby){
+        ctx.lineWidth = 5;
+        ctx.moveTo(x,400);
+        setTimeout(() => {ctx.lineTo(x,y+400-(y/10))}, startingdelay+100*1);
+        setTimeout(() => {ctx.lineTo(x,y+400-(2*y/10))}, startingdelay+100*2);
+        setTimeout(() => {ctx.lineTo(x,y+400-(3*y/10))}, startingdelay+100*3);
+        setTimeout(() => {ctx.lineTo(x,y+400-(4*y/10))}, startingdelay+100*4);
+        setTimeout(() => {ctx.lineTo(x,y+400-(5*y/10))}, startingdelay+100*5);
+        setTimeout(() => {ctx.lineTo(x,y+400-(6*y/10))}, startingdelay+100*6);
+        setTimeout(() => {ctx.lineTo(x,y+400-(7*y/10))}, startingdelay+100*7);
+        setTimeout(() => {ctx.lineTo(x,y+400-(8*y/10))}, startingdelay+100*8);
+        setTimeout(() => {ctx.lineTo(x,y+400-(9*y/10))}, startingdelay+100*9);
+        setTimeout(() => {ctx.lineTo(x,400)}, startingdelay+100*10);
+        ctx.lineWidth = 1;
+
         setTimeout(() => { drawfireworks(x,y,1*plusby); }, startingdelay+100*1/plusby);
         setTimeout(() => { drawfireworks(x,y,2*plusby); }, startingdelay+100*2/plusby);
         setTimeout(() => { drawfireworks(x,y,3*plusby); }, startingdelay+100*3/plusby);
@@ -153,6 +167,15 @@
         setTimeout(() => { drawfireworks(x,y,99*plusby); }, startingdelay+100*99/plusby);
         setTimeout(() => { drawfireworks(x,y,100*plusby); }, startingdelay+100*100/plusby);
       }
+
+      ctx.lineWidth = 5;
+
+      let f = 400;
+      while (f > 100 && false){
+        setTimeout(() => { drawfireworks(x,y,1*plusby); }, startingdelay+100*1/plusby);
+      }
+
+      ctx.lineWidth = 1;
 
       animatefirework(100,200,0,0.5);
       animatefirework(300,200,0,1);
