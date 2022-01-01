@@ -162,7 +162,17 @@
       }
 
 
-      animatefirework(200,200,100);
+      //animatefirework(200,200,100);
+
+      let g = 1;
+      let startingdelay = 100;
+      let x = 700;
+      let y = 300;
+
+      while (g <= 100){
+        setTimeout(() => { drawfireworks(x,y,g); }, startingdelay+100*g);
+        g = g + 1;
+      }
 
       setTimeout(() => { drawfireworks(600,200,10); }, 3000);
       setTimeout(() => { drawfireworks(600,200,10); }, 3000);
