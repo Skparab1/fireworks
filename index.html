@@ -50,24 +50,32 @@
         ctx.strokeStyle = 'rgb(255,0,0)';
         ctx.stroke();
       };
+      
+      function drawfireline(x,y){
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(x,400);
+        ctx.lineTo(x,y)
+        ctx.strokeStyle = 'rgb(255,0,0)';
+        ctx.stroke();
+        ctx.lineWidth = 1;
+      }
 
       function animatefirework(x,y,startingdelay,plusby){
         ctx.lineWidth = 5;
         ctx.beginPath();
         ctx.moveTo(x,400);
-        setTimeout(() => {ctx.lineTo(x,380)}, startingdelay+100*1);
-        setTimeout(() => {ctx.lineTo(x,360)}, startingdelay+100*2);
-        setTimeout(() => {ctx.lineTo(x,340)}, startingdelay+100*3);
-        setTimeout(() => {ctx.lineTo(x,320)}, startingdelay+100*4);
-        setTimeout(() => {ctx.lineTo(x,300)}, startingdelay+100*5);
-        setTimeout(() => {ctx.lineTo(x,280)}, startingdelay+100*6);
-        setTimeout(() => {ctx.lineTo(x,260)}, startingdelay+100*7);
-        setTimeout(() => {ctx.lineTo(x,240)}, startingdelay+100*8);
-        setTimeout(() => {ctx.lineTo(x,220)}, startingdelay+100*9);
-        setTimeout(() => {ctx.lineTo(x,200)}, startingdelay+100*10);
-        ctx.strokeStyle = 'rgb(255,0,0)';
-        ctx.stroke();
-        ctx.lineWidth = 1;
+        setTimeout(() => {drawfireline(x,380)}, startingdelay+100*1);
+        setTimeout(() => {drawfireline(x,360)}, startingdelay+100*2);
+        setTimeout(() => {drawfireline(x,340)}, startingdelay+100*3);
+        setTimeout(() => {drawfireline(x,320)}, startingdelay+100*4);
+        setTimeout(() => {drawfireline(x,300)}, startingdelay+100*5);
+        setTimeout(() => {drawfireline(x,280)}, startingdelay+100*6);
+        setTimeout(() => {drawfireline(x,260)}, startingdelay+100*7);
+        setTimeout(() => {drawfireline(x,240)}, startingdelay+100*8);
+        setTimeout(() => {drawfireline(x,220)}, startingdelay+100*9);
+        setTimeout(() => {drawfireline(x,200)}, startingdelay+100*10);
+
 
         setTimeout(() => { drawfireworks(x,y,1*plusby); }, startingdelay+100*1/plusby);
         setTimeout(() => { drawfireworks(x,y,2*plusby); }, startingdelay+100*2/plusby);
