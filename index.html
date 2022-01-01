@@ -56,7 +56,7 @@
         ctx.beginPath();
         ctx.moveTo(x,400);
         ctx.lineTo(x,y)
-        ctx.strokeStyle = 'rgb(' + str(round((100-y)*255/100)) + ', 0, 0)';
+        ctx.strokeStyle = 'rgb(' + Math.floor((100-y)*255/100) + ', 0, 0)';
         ctx.stroke();
         ctx.lineWidth = 1;
       }
