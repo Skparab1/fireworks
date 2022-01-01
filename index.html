@@ -53,6 +53,7 @@
 
       function animatefirework(x,y,startingdelay,plusby){
         ctx.lineWidth = 5;
+        ctx.beginPath();
         ctx.moveTo(x,400);
         setTimeout(() => {ctx.lineTo(x,y+400-(y/10))}, startingdelay+100*1);
         setTimeout(() => {ctx.lineTo(x,y+400-(2*y/10))}, startingdelay+100*2);
