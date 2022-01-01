@@ -51,17 +51,10 @@
         ctx.stroke();
       };
 
-      let s = 0;
-      while (s < 100){
-        drawfireworks(200,200,s);
-
-        s += 0.001;
-
-      }
 
       s = 0;
       while (s < 100){
-        setTimeout(() => { drawfireworks(400,200,s); }, 2000);
+        setTimeout(() => { drawfireworks(400,200,s); }, s*10);
 
         s += 1;
 
