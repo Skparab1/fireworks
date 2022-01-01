@@ -51,15 +51,34 @@
         ctx.stroke();
       };
 
-
-      s = 10;
-      while (s < 100){
-        setTimeout(() => { drawfireworks(400,200,s); }, s*100+1000);
-
-        s += 10;
-
+      function animatefirework(x,y,startingdelay){
+        setTimeout(() => { drawfireworks(x,y,5); }, startingdelay+1000*1);
+        setTimeout(() => { drawfireworks(x,y,10); }, startingdelay+1000*2);
+        setTimeout(() => { drawfireworks(x,y,15); }, startingdelay+1000*3);
+        setTimeout(() => { drawfireworks(x,y,20); }, startingdelay+1000*4);
+        setTimeout(() => { drawfireworks(x,y,25); }, startingdelay+1000*5);
+        setTimeout(() => { drawfireworks(x,y,30); }, startingdelay+1000*6);
+        setTimeout(() => { drawfireworks(x,y,35); }, startingdelay+1000*7);
+        setTimeout(() => { drawfireworks(x,y,40); }, startingdelay+1000*8);
+        setTimeout(() => { drawfireworks(x,y,45); }, startingdelay+1000*9);
+        setTimeout(() => { drawfireworks(x,y,50); }, startingdelay+1000*10);
+        setTimeout(() => { drawfireworks(x,y,55); }, startingdelay+1000*11);
+        setTimeout(() => { drawfireworks(x,y,60); }, startingdelay+1000*12);
+        setTimeout(() => { drawfireworks(x,y,65); }, startingdelay+1000*13);
+        setTimeout(() => { drawfireworks(x,y,70); }, startingdelay+1000*14);
+        setTimeout(() => { drawfireworks(x,y,75); }, startingdelay+1000*15);
+        setTimeout(() => { drawfireworks(x,y,80); }, startingdelay+1000*16);
+        setTimeout(() => { drawfireworks(x,y,85); }, startingdelay+1000*17);
+        setTimeout(() => { drawfireworks(x,y,90); }, startingdelay+1000*18);
+        setTimeout(() => { drawfireworks(x,y,95); }, startingdelay+1000*19);
+        setTimeout(() => { drawfireworks(x,y,100); }, startingdelay+1000*20);
+        setTimeout(() => { drawfireworks(x,y,105); }, startingdelay+1000*21);
       }
 
+
+      animatefirework(200,200,100);
+
+      setTimeout(() => { drawfireworks(600,200,10); }, 3000);
       setTimeout(() => { drawfireworks(600,200,10); }, 3000);
       setTimeout(() => { drawfireworks(600,200,20); }, 4000);
       setTimeout(() => { drawfireworks(600,200,30); }, 5000);
