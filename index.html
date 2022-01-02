@@ -32,6 +32,10 @@
 
       function drawfireworks(clr,x,y,size,erase){
 
+        if (size > 150){
+          size = 150;
+        }
+
         ctx.fillStyle = clr;
         if (erase){
           ctx.fillStyle = clr;
@@ -84,7 +88,7 @@
         const sleep = ms => new Promise(res => setTimeout(res, ms)); // await sleep(x) sleeps for x milliseconds
 
         (async () => {
-          for (let i = 398; i >= 200; i -= (i-150)/75) {
+          for (let i = 398; i >= 200; i -= (i-150)/100) {
             drawfireline(red,green,blue,x,i,false);
             await sleep(2);
           }
@@ -93,59 +97,66 @@
       
         startingdelay = startingdelay+25*97/plusby+100;
 
-        setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*1/plusby,'rgb(251,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*2/plusby,'rgb(251,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,395,'npe'); }, startingdelay+25*2/plusby,'rgb(249,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,395,'npe'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,394,'npe'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,394,'npe'); }, startingdelay+25*3/plusby,'rgb(247,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,393,'npe'); }, startingdelay+25*3/plusby,'rgb(246,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,392,'npe'); }, startingdelay+25*4/plusby,'rgb(245,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,392,'npe'); }, startingdelay+25*4/plusby,'rgb(244,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,391,'npe'); }, startingdelay+25*5/plusby,'rgb(243,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,390,'npe'); }, startingdelay+25*5/plusby,'rgb(242,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,389,'npe'); }, startingdelay+25*6/plusby,'rgb(241,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,388,'npe'); }, startingdelay+25*6/plusby,'rgb(239,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,387,'npe'); }, startingdelay+25*7/plusby,'rgb(238,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,385,'npe'); }, startingdelay+25*7/plusby,'rgb(236,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,384,'npe'); }, startingdelay+25*8/plusby,'rgb(234,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,382,'npe'); }, startingdelay+25*9/plusby,'rgb(232,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,380,'npe'); }, startingdelay+25*10/plusby,'rgb(230,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,378,'npe'); }, startingdelay+25*11/plusby,'rgb(227,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,376,'npe'); }, startingdelay+25*12/plusby,'rgb(225,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,374,'npe'); }, startingdelay+25*13/plusby,'rgb(222,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,371,'npe'); }, startingdelay+25*14/plusby,'rgb(218,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,368,'npe'); }, startingdelay+25*16/plusby,'rgb(215,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,365,'npe'); }, startingdelay+25*17/plusby,'rgb(211,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,362,'npe'); }, startingdelay+25*19/plusby,'rgb(206,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,358,'npe'); }, startingdelay+25*21/plusby,'rgb(201,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,354,'npe'); }, startingdelay+25*23/plusby,'rgb(196,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,349,'npe'); }, startingdelay+25*26/plusby,'rgb(190,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,344,'npe'); }, startingdelay+25*28/plusby,'rgb(183,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,338,'npe'); }, startingdelay+25*31/plusby,'rgb(176,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,332,'npe'); }, startingdelay+25*34/plusby,'rgb(168,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,325,'npe'); }, startingdelay+25*37/plusby,'rgb(160,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,318,'npe'); }, startingdelay+25*41/plusby,'rgb(150,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,309,'npe'); }, startingdelay+25*45/plusby,'rgb(140,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,300,'npe'); }, startingdelay+25*50/plusby,'rgb(128,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,290,'npe'); }, startingdelay+25*55/plusby,'rgb(115,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,280,'npe'); }, startingdelay+25*60/plusby,'rgb(101,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,267,'npe'); }, startingdelay+25*66/plusby,'rgb(86,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,260,'npe'); }, startingdelay+25*70/plusby,'rgb(8,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,254,'npe'); }, startingdelay+25*73/plusby,'rgb(69,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,246,'npe'); }, startingdelay+25*77/plusby,'rgb(8,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,240,'npe'); }, startingdelay+25*80/plusby,'rgb(51,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,232,'npe'); }, startingdelay+25*84/plusby,'rgb(8,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,224,'npe'); }, startingdelay+25*88/plusby,'rgb(30,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,218,'npe'); }, startingdelay+25*94/plusby,'rgb(8,0,0)');
-        setTimeout(() => { drawfireline(red,green,blue,x,206,'npe'); }, startingdelay+25*97/plusby,'rgb(8,0,0)');
+        setTimeout(() => { (async () => {
+          for (let i = 398; i >= 200; i -= (i-150)/100) {
+            drawfireline(red,green,blue,x,i,'npe');
+            await sleep(2);
+          }
+        })(); }, startingdelay-10*1/plusby);
+        
+        // setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*1/plusby,'rgb(251,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,397,'npe'); }, startingdelay+25*2/plusby,'rgb(251,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,396,'npe'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,395,'npe'); }, startingdelay+25*2/plusby,'rgb(249,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,395,'npe'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,394,'npe'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,394,'npe'); }, startingdelay+25*3/plusby,'rgb(247,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,393,'npe'); }, startingdelay+25*3/plusby,'rgb(246,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,392,'npe'); }, startingdelay+25*4/plusby,'rgb(245,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,392,'npe'); }, startingdelay+25*4/plusby,'rgb(244,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,391,'npe'); }, startingdelay+25*5/plusby,'rgb(243,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,390,'npe'); }, startingdelay+25*5/plusby,'rgb(242,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,389,'npe'); }, startingdelay+25*6/plusby,'rgb(241,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,388,'npe'); }, startingdelay+25*6/plusby,'rgb(239,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,387,'npe'); }, startingdelay+25*7/plusby,'rgb(238,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,385,'npe'); }, startingdelay+25*7/plusby,'rgb(236,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,384,'npe'); }, startingdelay+25*8/plusby,'rgb(234,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,382,'npe'); }, startingdelay+25*9/plusby,'rgb(232,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,380,'npe'); }, startingdelay+25*10/plusby,'rgb(230,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,378,'npe'); }, startingdelay+25*11/plusby,'rgb(227,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,376,'npe'); }, startingdelay+25*12/plusby,'rgb(225,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,374,'npe'); }, startingdelay+25*13/plusby,'rgb(222,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,371,'npe'); }, startingdelay+25*14/plusby,'rgb(218,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,368,'npe'); }, startingdelay+25*16/plusby,'rgb(215,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,365,'npe'); }, startingdelay+25*17/plusby,'rgb(211,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,362,'npe'); }, startingdelay+25*19/plusby,'rgb(206,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,358,'npe'); }, startingdelay+25*21/plusby,'rgb(201,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,354,'npe'); }, startingdelay+25*23/plusby,'rgb(196,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,349,'npe'); }, startingdelay+25*26/plusby,'rgb(190,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,344,'npe'); }, startingdelay+25*28/plusby,'rgb(183,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,338,'npe'); }, startingdelay+25*31/plusby,'rgb(176,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,332,'npe'); }, startingdelay+25*34/plusby,'rgb(168,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,325,'npe'); }, startingdelay+25*37/plusby,'rgb(160,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,318,'npe'); }, startingdelay+25*41/plusby,'rgb(150,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,309,'npe'); }, startingdelay+25*45/plusby,'rgb(140,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,300,'npe'); }, startingdelay+25*50/plusby,'rgb(128,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,290,'npe'); }, startingdelay+25*55/plusby,'rgb(115,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,280,'npe'); }, startingdelay+25*60/plusby,'rgb(101,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,267,'npe'); }, startingdelay+25*66/plusby,'rgb(86,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,260,'npe'); }, startingdelay+25*70/plusby,'rgb(8,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,254,'npe'); }, startingdelay+25*73/plusby,'rgb(69,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,246,'npe'); }, startingdelay+25*77/plusby,'rgb(8,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,240,'npe'); }, startingdelay+25*80/plusby,'rgb(51,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,232,'npe'); }, startingdelay+25*84/plusby,'rgb(8,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,224,'npe'); }, startingdelay+25*88/plusby,'rgb(30,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,218,'npe'); }, startingdelay+25*94/plusby,'rgb(8,0,0)');
+        // setTimeout(() => { drawfireline(red,green,blue,x,206,'npe'); }, startingdelay+25*97/plusby,'rgb(8,0,0)');
 
 
         setTimeout(() => { drawfireworks(firecolor,x,y,1*plusby,false); }, startingdelay+100*1/plusby);
