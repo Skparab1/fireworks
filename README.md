@@ -2,6 +2,8 @@
 - a graphic for new years (i felt like doing something lol
 - go [here](https://skparab1.github.io/fireworks)
 
+![](ezgif.com-gif-maker(8).gif)
+
 ## NO p5js (@RONAK)
 - only plain js (so its super fast)
 - it was a lot harder than p5js to build, but arguably looks better and is definetily faster
