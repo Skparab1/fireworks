@@ -62,10 +62,11 @@
         ctx.beginPath();
         ctx.moveTo(x,y+30);
         ctx.lineTo(x,y)
+        let c;
         if (overridecolor == 'nope'){
-          let c = Math.floor((400-y)*255/(400-y));
+          c = Math.floor((400-y)*255/(400-y));
         } else {
-          let c = overridecolor;
+          c = overridecolor;
         }
 
         ctx.strokeStyle = 'rgb(' + c + ', 0, 0)';
