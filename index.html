@@ -402,27 +402,48 @@
       let red;
       let green;
       let blue;
+      let size;
+      let x;
+      let y;
+
 
       red = Math.floor(Math.random()*175+80);
       green = Math.floor(Math.random()*175+80);
       blue = Math.floor(Math.random()*175+80);
-
-      animatefirework(100,200,0,0.5,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
-
-      red = Math.floor(Math.random()*175+80);
-      green = Math.floor(Math.random()*175+80);
-      blue = Math.floor(Math.random()*175+80);
-      animatefirework(300,200,0,1,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      size = (Math.random()*2+2.5);
+      x = (Math.random()*700+50);
+      y = (Math.random()*300+100);
+      animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
 
       red = Math.floor(Math.random()*175+80);
       green = Math.floor(Math.random()*175+80);
       blue = Math.floor(Math.random()*175+80);
-      animatefirework(500,200,0,1.5,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      size = (Math.random()*2+2.5);
+      x = (Math.random()*700+50);
+      y = (Math.random()*300+100);
+      animatefirework(x,200,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
 
       red = Math.floor(Math.random()*175+80);
       green = Math.floor(Math.random()*175+80);
       blue = Math.floor(Math.random()*175+80);
-      animatefirework(700,200,0,2,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      size = (Math.random()*2+2.5);
+      x = (Math.random()*700+50);
+      y = (Math.random()*300+100);
+      animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+
+      let o = 0;
+      while (false){
+        if (o % 1000 == 0){
+          red = Math.floor(Math.random()*175+80);
+          green = Math.floor(Math.random()*175+80);
+          blue = Math.floor(Math.random()*175+80);
+          size = (Math.random()*2+2.5);
+          x = (Math.random()*700+50);
+          y = (Math.random()*300+100);
+          animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+          o += 1;
+        }
+      }
 
       console.log('rgb('+red+', '+green+', '+blue+')');
     </script>
