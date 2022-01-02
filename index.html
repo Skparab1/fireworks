@@ -31,6 +31,7 @@
       };
 
       function drawfireworks(clr,x,y,size,erase){
+
         ctx.fillStyle = clr;
         if (erase){
           ctx.fillStyle = clr;
@@ -52,7 +53,8 @@
           ctx.strokeStyle = 'rgb(0,0,0)';
         }
         ctx.stroke();
-      };
+      }
+      
       
       function drawfireline(red,green,blue,x,y,overridecolor){
         ctx.lineWidth = 5;
@@ -390,15 +392,6 @@
         setTimeout(() => { drawfireworks(firecolor,x,y,98*plusby,true); }, startingdelay+100*98/plusby);
       }
 
-      ctx.lineWidth = 5;
-
-      let f = 400;
-      while (f > 100 && false){
-        setTimeout(() => { drawfireworks(firecolor,x,y,1*plusby); }, startingdelay+100*1/plusby);
-      }
-
-      ctx.lineWidth = 1;
-
       let red;
       let green;
       let blue;
@@ -406,30 +399,37 @@
       let x;
       let y;
 
+      function randomfirework(){
+        red = Math.floor(Math.random()*175+80);
+        green = Math.floor(Math.random()*175+80);
+        blue = Math.floor(Math.random()*175+80);
+        size = (Math.random()*2+2.5);
+        x = (Math.random()*700+50);
+        y = (Math.random()*300+100);
+        animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      }
 
-      red = Math.floor(Math.random()*175+80);
-      green = Math.floor(Math.random()*175+80);
-      blue = Math.floor(Math.random()*175+80);
-      size = (Math.random()*2+2.5);
-      x = (Math.random()*700+50);
-      y = (Math.random()*300+100);
-      animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      delaytime = 2500;
 
-      red = Math.floor(Math.random()*175+80);
-      green = Math.floor(Math.random()*175+80);
-      blue = Math.floor(Math.random()*175+80);
-      size = (Math.random()*2+2.5);
-      x = (Math.random()*700+50);
-      y = (Math.random()*300+100);
-      animatefirework(x,200,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
-
-      red = Math.floor(Math.random()*175+80);
-      green = Math.floor(Math.random()*175+80);
-      blue = Math.floor(Math.random()*175+80);
-      size = (Math.random()*2+2.5);
-      x = (Math.random()*700+50);
-      y = (Math.random()*300+100);
-      animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      setTimeout(() => { randomfirework();}, 0);
+      setTimeout(() => { randomfirework();}, 100);
+      setTimeout(() => { randomfirework();}, 200);
+      setTimeout(() => { randomfirework();}, delaytime*2);
+      setTimeout(() => { randomfirework();}, delaytime*2.5);
+      setTimeout(() => { randomfirework();}, delaytime*3);
+      setTimeout(() => { randomfirework();}, delaytime*4);
+      setTimeout(() => { randomfirework();}, delaytime*5);
+      setTimeout(() => { randomfirework();}, delaytime*6);
+      setTimeout(() => { randomfirework();}, delaytime*7);
+      setTimeout(() => { randomfirework();}, delaytime*8);
+      setTimeout(() => { randomfirework();}, delaytime*9);
+      setTimeout(() => { randomfirework();}, delaytime*10);
+      setTimeout(() => { randomfirework();}, delaytime*11);
+      setTimeout(() => { randomfirework();}, delaytime*12);
+      setTimeout(() => { randomfirework();}, delaytime*13);
+      setTimeout(() => { randomfirework();}, delaytime*14);
+      setTimeout(() => { randomfirework();}, delaytime*15);
+      
 
       let o = 0;
       while (false){
@@ -438,7 +438,7 @@
           green = Math.floor(Math.random()*175+80);
           blue = Math.floor(Math.random()*175+80);
           size = (Math.random()*2+2.5);
-          x = (Math.random()*700+50);
+          x = (Math.random()*100+50);
           y = (Math.random()*300+100);
           animatefirework(x,200,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
           o += 1;
