@@ -62,14 +62,13 @@
         ctx.beginPath();
         ctx.moveTo(x,y+30);
         ctx.lineTo(x,y)
-        var c;
-        if (overridecolor == false){
-          c = Math.floor((400-y)*255/(400-y));
+        if (!overridecolor){
+          ctx.strokeStyle = 'rgb(' + Math.floor((400-y)*255/200) + ', 0, 0)';
         } else {
-          c = 0;
+          ctx.strokeStyle = 'rgb(0, 0, 0)';
         }
 
-        ctx.strokeStyle = 'rgb(' + c + ', 0, 0)';
+
         ctx.stroke();
         ctx.lineWidth = 1;
       }
