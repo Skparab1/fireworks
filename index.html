@@ -33,8 +33,11 @@
       function donothing(){
       }
 
-      function drawfireworks(x,y,size) {
+      function drawfireworks(x,y,size,erase) {
         ctx.fillStyle = 'rgb(255,0,0)';
+        if (erase){
+          ctx.fillStyle = 'rgb(0,0,0)';
+        }
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(x,y);
@@ -54,9 +57,9 @@
       function drawfireline(x,y,strokecolor){
         ctx.lineWidth = 5;
         ctx.beginPath();
-        ctx.moveTo(x,y+20);
+        ctx.moveTo(x,y+30);
         ctx.lineTo(x,y)
-        ctx.strokeStyle = 'rgb(' + Math.floor((400-y)*255/200) + ', 0, 0)';
+        ctx.strokeStyle = 'rgb(' + Math.floor((400-y)*255/(400-y)) + ', 0, 0)';
         ctx.stroke();
         ctx.lineWidth = 1;
       }
@@ -117,106 +120,50 @@
         
         startingdelay = startingdelay+25*97/plusby;
 
-        setTimeout(() => { drawfireworks(x,y,1*plusby); }, startingdelay+100*1/plusby);
-        setTimeout(() => { drawfireworks(x,y,2*plusby); }, startingdelay+100*2/plusby);
-        setTimeout(() => { drawfireworks(x,y,3*plusby); }, startingdelay+100*3/plusby);
-        setTimeout(() => { drawfireworks(x,y,4*plusby); }, startingdelay+100*4/plusby);
-        setTimeout(() => { drawfireworks(x,y,5*plusby); }, startingdelay+100*5/plusby);
-        setTimeout(() => { drawfireworks(x,y,6*plusby); }, startingdelay+100*6/plusby);
-        setTimeout(() => { drawfireworks(x,y,7*plusby); }, startingdelay+100*7/plusby);
-        setTimeout(() => { drawfireworks(x,y,8*plusby); }, startingdelay+100*8/plusby);
-        setTimeout(() => { drawfireworks(x,y,9*plusby); }, startingdelay+100*9/plusby);
-        setTimeout(() => { drawfireworks(x,y,10*plusby); }, startingdelay+100*10/plusby);
-        setTimeout(() => { drawfireworks(x,y,11*plusby); }, startingdelay+100*11/plusby);
-        setTimeout(() => { drawfireworks(x,y,12*plusby); }, startingdelay+100*12/plusby);
-        setTimeout(() => { drawfireworks(x,y,13*plusby); }, startingdelay+100*13/plusby);
-        setTimeout(() => { drawfireworks(x,y,14*plusby); }, startingdelay+100*14/plusby);
-        setTimeout(() => { drawfireworks(x,y,15*plusby); }, startingdelay+100*15/plusby);
-        setTimeout(() => { drawfireworks(x,y,16*plusby); }, startingdelay+100*16/plusby);
-        setTimeout(() => { drawfireworks(x,y,17*plusby); }, startingdelay+100*17/plusby);
-        setTimeout(() => { drawfireworks(x,y,18*plusby); }, startingdelay+100*18/plusby);
-        setTimeout(() => { drawfireworks(x,y,19*plusby); }, startingdelay+100*19/plusby);
-        setTimeout(() => { drawfireworks(x,y,20*plusby); }, startingdelay+100*20/plusby);
-        setTimeout(() => { drawfireworks(x,y,21*plusby); }, startingdelay+100*21/plusby);
-        setTimeout(() => { drawfireworks(x,y,22*plusby); }, startingdelay+100*22/plusby);
-        setTimeout(() => { drawfireworks(x,y,23*plusby); }, startingdelay+100*23/plusby);
-        setTimeout(() => { drawfireworks(x,y,24*plusby); }, startingdelay+100*24/plusby);
-        setTimeout(() => { drawfireworks(x,y,25*plusby); }, startingdelay+100*25/plusby);
-        setTimeout(() => { drawfireworks(x,y,26*plusby); }, startingdelay+100*26/plusby);
-        setTimeout(() => { drawfireworks(x,y,27*plusby); }, startingdelay+100*27/plusby);
-        setTimeout(() => { drawfireworks(x,y,28*plusby); }, startingdelay+100*28/plusby);
-        setTimeout(() => { drawfireworks(x,y,29*plusby); }, startingdelay+100*29/plusby);
-        setTimeout(() => { drawfireworks(x,y,30*plusby); }, startingdelay+100*30/plusby);
-        setTimeout(() => { drawfireworks(x,y,31*plusby); }, startingdelay+100*31/plusby);
-        setTimeout(() => { drawfireworks(x,y,32*plusby); }, startingdelay+100*32/plusby);
-        setTimeout(() => { drawfireworks(x,y,33*plusby); }, startingdelay+100*33/plusby);
-        setTimeout(() => { drawfireworks(x,y,34*plusby); }, startingdelay+100*34/plusby);
-        setTimeout(() => { drawfireworks(x,y,35*plusby); }, startingdelay+100*35/plusby);
-        setTimeout(() => { drawfireworks(x,y,36*plusby); }, startingdelay+100*36/plusby);
-        setTimeout(() => { drawfireworks(x,y,37*plusby); }, startingdelay+100*37/plusby);
-        setTimeout(() => { drawfireworks(x,y,38*plusby); }, startingdelay+100*38/plusby);
-        setTimeout(() => { drawfireworks(x,y,39*plusby); }, startingdelay+100*39/plusby);
-        setTimeout(() => { drawfireworks(x,y,40*plusby); }, startingdelay+100*40/plusby);
-        setTimeout(() => { drawfireworks(x,y,41*plusby); }, startingdelay+100*41/plusby);
-        setTimeout(() => { drawfireworks(x,y,42*plusby); }, startingdelay+100*42/plusby);
-        setTimeout(() => { drawfireworks(x,y,43*plusby); }, startingdelay+100*43/plusby);
-        setTimeout(() => { drawfireworks(x,y,44*plusby); }, startingdelay+100*44/plusby);
-        setTimeout(() => { drawfireworks(x,y,45*plusby); }, startingdelay+100*45/plusby);
-        setTimeout(() => { drawfireworks(x,y,46*plusby); }, startingdelay+100*46/plusby);
-        setTimeout(() => { drawfireworks(x,y,47*plusby); }, startingdelay+100*47/plusby);
-        setTimeout(() => { drawfireworks(x,y,48*plusby); }, startingdelay+100*48/plusby);
-        setTimeout(() => { drawfireworks(x,y,49*plusby); }, startingdelay+100*49/plusby);
-        setTimeout(() => { drawfireworks(x,y,50*plusby); }, startingdelay+100*50/plusby);
-        setTimeout(() => { drawfireworks(x,y,51*plusby); }, startingdelay+100*51/plusby);
-        setTimeout(() => { drawfireworks(x,y,52*plusby); }, startingdelay+100*52/plusby);
-        setTimeout(() => { drawfireworks(x,y,53*plusby); }, startingdelay+100*53/plusby);
-        setTimeout(() => { drawfireworks(x,y,54*plusby); }, startingdelay+100*54/plusby);
-        setTimeout(() => { drawfireworks(x,y,55*plusby); }, startingdelay+100*55/plusby);
-        setTimeout(() => { drawfireworks(x,y,56*plusby); }, startingdelay+100*56/plusby);
-        setTimeout(() => { drawfireworks(x,y,57*plusby); }, startingdelay+100*57/plusby);
-        setTimeout(() => { drawfireworks(x,y,58*plusby); }, startingdelay+100*58/plusby);
-        setTimeout(() => { drawfireworks(x,y,59*plusby); }, startingdelay+100*59/plusby);
-        setTimeout(() => { drawfireworks(x,y,60*plusby); }, startingdelay+100*60/plusby);
-        setTimeout(() => { drawfireworks(x,y,61*plusby); }, startingdelay+100*61/plusby);
-        setTimeout(() => { drawfireworks(x,y,62*plusby); }, startingdelay+100*62/plusby);
-        setTimeout(() => { drawfireworks(x,y,63*plusby); }, startingdelay+100*63/plusby);
-        setTimeout(() => { drawfireworks(x,y,64*plusby); }, startingdelay+100*64/plusby);
-        setTimeout(() => { drawfireworks(x,y,65*plusby); }, startingdelay+100*65/plusby);
-        setTimeout(() => { drawfireworks(x,y,66*plusby); }, startingdelay+100*66/plusby);
-        setTimeout(() => { drawfireworks(x,y,67*plusby); }, startingdelay+100*67/plusby);
-        setTimeout(() => { drawfireworks(x,y,68*plusby); }, startingdelay+100*68/plusby);
-        setTimeout(() => { drawfireworks(x,y,69*plusby); }, startingdelay+100*69/plusby);
-        setTimeout(() => { drawfireworks(x,y,70*plusby); }, startingdelay+100*70/plusby);
-        setTimeout(() => { drawfireworks(x,y,71*plusby); }, startingdelay+100*71/plusby);
-        setTimeout(() => { drawfireworks(x,y,72*plusby); }, startingdelay+100*72/plusby);
-        setTimeout(() => { drawfireworks(x,y,73*plusby); }, startingdelay+100*73/plusby);
-        setTimeout(() => { drawfireworks(x,y,74*plusby); }, startingdelay+100*74/plusby);
-        setTimeout(() => { drawfireworks(x,y,75*plusby); }, startingdelay+100*75/plusby);
-        setTimeout(() => { drawfireworks(x,y,76*plusby); }, startingdelay+100*76/plusby);
-        setTimeout(() => { drawfireworks(x,y,77*plusby); }, startingdelay+100*77/plusby);
-        setTimeout(() => { drawfireworks(x,y,78*plusby); }, startingdelay+100*78/plusby);
-        setTimeout(() => { drawfireworks(x,y,79*plusby); }, startingdelay+100*79/plusby);
-        setTimeout(() => { drawfireworks(x,y,80*plusby); }, startingdelay+100*80/plusby);
-        setTimeout(() => { drawfireworks(x,y,81*plusby); }, startingdelay+100*81/plusby);
-        setTimeout(() => { drawfireworks(x,y,82*plusby); }, startingdelay+100*82/plusby);
-        setTimeout(() => { drawfireworks(x,y,83*plusby); }, startingdelay+100*83/plusby);
-        setTimeout(() => { drawfireworks(x,y,84*plusby); }, startingdelay+100*84/plusby);
-        setTimeout(() => { drawfireworks(x,y,85*plusby); }, startingdelay+100*85/plusby);
-        setTimeout(() => { drawfireworks(x,y,86*plusby); }, startingdelay+100*86/plusby);
-        setTimeout(() => { drawfireworks(x,y,87*plusby); }, startingdelay+100*87/plusby);
-        setTimeout(() => { drawfireworks(x,y,88*plusby); }, startingdelay+100*88/plusby);
-        setTimeout(() => { drawfireworks(x,y,89*plusby); }, startingdelay+100*89/plusby);
-        setTimeout(() => { drawfireworks(x,y,90*plusby); }, startingdelay+100*90/plusby);
-        setTimeout(() => { drawfireworks(x,y,91*plusby); }, startingdelay+100*91/plusby);
-        setTimeout(() => { drawfireworks(x,y,92*plusby); }, startingdelay+100*92/plusby);
-        setTimeout(() => { drawfireworks(x,y,93*plusby); }, startingdelay+100*93/plusby);
-        setTimeout(() => { drawfireworks(x,y,94*plusby); }, startingdelay+100*94/plusby);
-        setTimeout(() => { drawfireworks(x,y,95*plusby); }, startingdelay+100*95/plusby);
-        setTimeout(() => { drawfireworks(x,y,96*plusby); }, startingdelay+100*96/plusby);
-        setTimeout(() => { drawfireworks(x,y,97*plusby); }, startingdelay+100*97/plusby);
-        setTimeout(() => { drawfireworks(x,y,98*plusby); }, startingdelay+100*98/plusby);
-        setTimeout(() => { drawfireworks(x,y,99*plusby); }, startingdelay+100*99/plusby);
-        setTimeout(() => { drawfireworks(x,y,100*plusby); }, startingdelay+100*100/plusby);
+        setTimeout(() => { drawfireline(x,370); }, startingdelay+100*6/plusby,'rgb(204,0,0)');
+        setTimeout(() => { drawfireline(x,340); }, startingdelay+100*20/plusby,'rgb(153,0,0)');
+        setTimeout(() => { drawfireline(x,310); }, startingdelay+100*37/plusby,'rgb(102,0,0)');
+        setTimeout(() => { drawfireline(x,280); }, startingdelay+100*50/plusby,'rgb(51,0,0)');
+        setTimeout(() => { drawfireline(x,250); }, startingdelay+100*75/plusby,'rgb(25,0,0)');
+        setTimeout(() => { drawfireline(x,220); }, startingdelay+100*75/plusby,'rgb(0,0,0)');
+        setTimeout(() => { drawfireline(x,y,1*plusby,false); }, startingdelay+100*52/plusby);
+
+        setTimeout(() => { drawfireline(x,y,1*plusby,false); }, startingdelay+100*1/plusby);
+        setTimeout(() => { drawfireline(x,y,11*plusby,false); }, startingdelay+100*11/plusby);
+        setTimeout(() => { drawfireline(x,y,20*plusby,false); }, startingdelay+100*20/plusby);
+        setTimeout(() => { drawfireline(x,y,28*plusby,false); }, startingdelay+100*28/plusby);
+        setTimeout(() => { drawfireline(x,y,35*plusby,false); }, startingdelay+100*35/plusby);
+        setTimeout(() => { drawfireline(x,y,42*plusby,false); }, startingdelay+100*42/plusby);
+        setTimeout(() => { drawfireline(x,y,47*plusby,false); }, startingdelay+100*47/plusby);
+        setTimeout(() => { drawfireline(x,y,53*plusby,false); }, startingdelay+100*53/plusby);
+        setTimeout(() => { drawfireline(x,y,57*plusby,false); }, startingdelay+100*57/plusby);
+        setTimeout(() => { drawfireline(x,y,62*plusby,false); }, startingdelay+100*62/plusby);
+        setTimeout(() => { drawfireline(x,y,65*plusby,false); }, startingdelay+100*65/plusby);
+        setTimeout(() => { drawfireline(x,y,69*plusby,false); }, startingdelay+100*69/plusby);
+        setTimeout(() => { drawfireline(x,y,72*plusby,false); }, startingdelay+100*72/plusby);
+        setTimeout(() => { drawfireline(x,y,75*plusby,false); }, startingdelay+100*75/plusby);
+        setTimeout(() => { drawfireline(x,y,77*plusby,false); }, startingdelay+100*77/plusby);
+        setTimeout(() => { drawfireline(x,y,80*plusby,false); }, startingdelay+100*80/plusby);
+        setTimeout(() => { drawfireline(x,y,82*plusby,false); }, startingdelay+100*82/plusby);
+        setTimeout(() => { drawfireline(x,y,83*plusby,false); }, startingdelay+100*83/plusby);
+        setTimeout(() => { drawfireline(x,y,85*plusby,false); }, startingdelay+100*85/plusby);
+        setTimeout(() => { drawfireline(x,y,87*plusby,false); }, startingdelay+100*87/plusby);
+        setTimeout(() => { drawfireline(x,y,88*plusby,false); }, startingdelay+100*88/plusby);
+        setTimeout(() => { drawfireline(x,y,89*plusby,false); }, startingdelay+100*89/plusby);
+        setTimeout(() => { drawfireline(x,y,90*plusby,false); }, startingdelay+100*90/plusby);
+        setTimeout(() => { drawfireline(x,y,91*plusby,false); }, startingdelay+100*91/plusby);
+        setTimeout(() => { drawfireline(x,y,92*plusby,false); }, startingdelay+100*92/plusby);
+        setTimeout(() => { drawfireline(x,y,93*plusby,false); }, startingdelay+100*93/plusby);
+        setTimeout(() => { drawfireline(x,y,94*plusby,false); }, startingdelay+100*94/plusby);
+        setTimeout(() => { drawfireline(x,y,94*plusby,false); }, startingdelay+100*94/plusby);
+        setTimeout(() => { drawfireline(x,y,95*plusby,false); }, startingdelay+100*95/plusby);
+        setTimeout(() => { drawfireline(x,y,95*plusby,false); }, startingdelay+100*95/plusby);
+        setTimeout(() => { drawfireline(x,y,96*plusby,false); }, startingdelay+100*96/plusby);
+        setTimeout(() => { drawfireline(x,y,96*plusby,false); }, startingdelay+100*96/plusby);
+        setTimeout(() => { drawfireline(x,y,97*plusby,false); }, startingdelay+100*97/plusby);
+        setTimeout(() => { drawfireline(x,y,97*plusby,false); }, startingdelay+100*97/plusby);
+        setTimeout(() => { drawfireline(x,y,97*plusby,false); }, startingdelay+100*97/plusby);
+        setTimeout(() => { drawfireline(x,y,98*plusby,false); }, startingdelay+100*98/plusby);
       }
 
       ctx.lineWidth = 5;
