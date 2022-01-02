@@ -51,15 +51,24 @@
         }
 
         ctx.strokeStyle = 'rgb(255,0,0)';
+        if (erase){
+          ctx.strokeStyle = 'rgb(0,0,0)';
+        }
         ctx.stroke();
       };
       
-      function drawfireline(x,y,strokecolor){
+      function drawfireline(x,y,overridecolor){
         ctx.lineWidth = 5;
         ctx.beginPath();
         ctx.moveTo(x,y+30);
         ctx.lineTo(x,y)
-        ctx.strokeStyle = 'rgb(' + Math.floor((400-y)*255/(400-y)) + ', 0, 0)';
+        if (overridecolor == 'nope'){
+          let c = Math.floor((400-y)*255/(400-y));
+        } else {
+          let c = overridecolor;
+        }
+
+        ctx.strokeStyle = 'rgb(' + c + ', 0, 0)';
         ctx.stroke();
         ctx.lineWidth = 1;
       }
@@ -68,65 +77,65 @@
         ctx.lineWidth = 5;
         ctx.beginPath();
         ctx.moveTo(x,400);
-        setTimeout(() => { drawfireline(x,398); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(x,398); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(x,398); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(x,397); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
-        setTimeout(() => { drawfireline(x,397); }, startingdelay+25*1/plusby,'rgb(251,0,0)');
-        setTimeout(() => { drawfireline(x,397); }, startingdelay+25*2/plusby,'rgb(251,0,0)');
-        setTimeout(() => { drawfireline(x,396); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(x,396); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(x,396); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
-        setTimeout(() => { drawfireline(x,395); }, startingdelay+25*2/plusby,'rgb(249,0,0)');
-        setTimeout(() => { drawfireline(x,395); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
-        setTimeout(() => { drawfireline(x,394); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
-        setTimeout(() => { drawfireline(x,394); }, startingdelay+25*3/plusby,'rgb(247,0,0)');
-        setTimeout(() => { drawfireline(x,393); }, startingdelay+25*3/plusby,'rgb(246,0,0)');
-        setTimeout(() => { drawfireline(x,392); }, startingdelay+25*4/plusby,'rgb(245,0,0)');
-        setTimeout(() => { drawfireline(x,392); }, startingdelay+25*4/plusby,'rgb(244,0,0)');
-        setTimeout(() => { drawfireline(x,391); }, startingdelay+25*5/plusby,'rgb(243,0,0)');
-        setTimeout(() => { drawfireline(x,390); }, startingdelay+25*5/plusby,'rgb(242,0,0)');
-        setTimeout(() => { drawfireline(x,389); }, startingdelay+25*6/plusby,'rgb(241,0,0)');
-        setTimeout(() => { drawfireline(x,388); }, startingdelay+25*6/plusby,'rgb(239,0,0)');
-        setTimeout(() => { drawfireline(x,387); }, startingdelay+25*7/plusby,'rgb(238,0,0)');
-        setTimeout(() => { drawfireline(x,385); }, startingdelay+25*7/plusby,'rgb(236,0,0)');
-        setTimeout(() => { drawfireline(x,384); }, startingdelay+25*8/plusby,'rgb(234,0,0)');
-        setTimeout(() => { drawfireline(x,382); }, startingdelay+25*9/plusby,'rgb(232,0,0)');
-        setTimeout(() => { drawfireline(x,380); }, startingdelay+25*10/plusby,'rgb(230,0,0)');
-        setTimeout(() => { drawfireline(x,378); }, startingdelay+25*11/plusby,'rgb(227,0,0)');
-        setTimeout(() => { drawfireline(x,376); }, startingdelay+25*12/plusby,'rgb(225,0,0)');
-        setTimeout(() => { drawfireline(x,374); }, startingdelay+25*13/plusby,'rgb(222,0,0)');
-        setTimeout(() => { drawfireline(x,371); }, startingdelay+25*14/plusby,'rgb(218,0,0)');
-        setTimeout(() => { drawfireline(x,368); }, startingdelay+25*16/plusby,'rgb(215,0,0)');
-        setTimeout(() => { drawfireline(x,365); }, startingdelay+25*17/plusby,'rgb(211,0,0)');
-        setTimeout(() => { drawfireline(x,362); }, startingdelay+25*19/plusby,'rgb(206,0,0)');
-        setTimeout(() => { drawfireline(x,358); }, startingdelay+25*21/plusby,'rgb(201,0,0)');
-        setTimeout(() => { drawfireline(x,354); }, startingdelay+25*23/plusby,'rgb(196,0,0)');
-        setTimeout(() => { drawfireline(x,349); }, startingdelay+25*26/plusby,'rgb(190,0,0)');
-        setTimeout(() => { drawfireline(x,344); }, startingdelay+25*28/plusby,'rgb(183,0,0)');
-        setTimeout(() => { drawfireline(x,338); }, startingdelay+25*31/plusby,'rgb(176,0,0)');
-        setTimeout(() => { drawfireline(x,332); }, startingdelay+25*34/plusby,'rgb(168,0,0)');
-        setTimeout(() => { drawfireline(x,325); }, startingdelay+25*37/plusby,'rgb(160,0,0)');
-        setTimeout(() => { drawfireline(x,318); }, startingdelay+25*41/plusby,'rgb(150,0,0)');
-        setTimeout(() => { drawfireline(x,309); }, startingdelay+25*45/plusby,'rgb(140,0,0)');
-        setTimeout(() => { drawfireline(x,300); }, startingdelay+25*50/plusby,'rgb(128,0,0)');
-        setTimeout(() => { drawfireline(x,290); }, startingdelay+25*55/plusby,'rgb(115,0,0)');
-        setTimeout(() => { drawfireline(x,280); }, startingdelay+25*60/plusby,'rgb(101,0,0)');
-        setTimeout(() => { drawfireline(x,267); }, startingdelay+25*66/plusby,'rgb(86,0,0)');
-        setTimeout(() => { drawfireline(x,254); }, startingdelay+25*73/plusby,'rgb(69,0,0)');
-        setTimeout(() => { drawfireline(x,240); }, startingdelay+25*80/plusby,'rgb(51,0,0)');
-        setTimeout(() => { drawfireline(x,224); }, startingdelay+25*88/plusby,'rgb(30,0,0)');
-        setTimeout(() => { drawfireline(x,206); }, startingdelay+25*97/plusby,'rgb(8,0,0)');
+        setTimeout(() => { drawfireline(x,398,'nope'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        setTimeout(() => { drawfireline(x,398,'nope'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        setTimeout(() => { drawfireline(x,398,'nope'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        setTimeout(() => { drawfireline(x,397,'nope'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
+        setTimeout(() => { drawfireline(x,397,'nope'); }, startingdelay+25*1/plusby,'rgb(251,0,0)');
+        setTimeout(() => { drawfireline(x,397,'nope'); }, startingdelay+25*2/plusby,'rgb(251,0,0)');
+        setTimeout(() => { drawfireline(x,396,'nope'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        setTimeout(() => { drawfireline(x,396,'nope'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        setTimeout(() => { drawfireline(x,396,'nope'); }, startingdelay+25*2/plusby,'rgb(250,0,0)');
+        setTimeout(() => { drawfireline(x,395,'nope'); }, startingdelay+25*2/plusby,'rgb(249,0,0)');
+        setTimeout(() => { drawfireline(x,395,'nope'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
+        setTimeout(() => { drawfireline(x,394,'nope'); }, startingdelay+25*3/plusby,'rgb(248,0,0)');
+        setTimeout(() => { drawfireline(x,394,'nope'); }, startingdelay+25*3/plusby,'rgb(247,0,0)');
+        setTimeout(() => { drawfireline(x,393,'nope'); }, startingdelay+25*3/plusby,'rgb(246,0,0)');
+        setTimeout(() => { drawfireline(x,392,'nope'); }, startingdelay+25*4/plusby,'rgb(245,0,0)');
+        setTimeout(() => { drawfireline(x,392,'nope'); }, startingdelay+25*4/plusby,'rgb(244,0,0)');
+        setTimeout(() => { drawfireline(x,391,'nope'); }, startingdelay+25*5/plusby,'rgb(243,0,0)');
+        setTimeout(() => { drawfireline(x,390,'nope'); }, startingdelay+25*5/plusby,'rgb(242,0,0)');
+        setTimeout(() => { drawfireline(x,389,'nope'); }, startingdelay+25*6/plusby,'rgb(241,0,0)');
+        setTimeout(() => { drawfireline(x,388,'nope'); }, startingdelay+25*6/plusby,'rgb(239,0,0)');
+        setTimeout(() => { drawfireline(x,387,'nope'); }, startingdelay+25*7/plusby,'rgb(238,0,0)');
+        setTimeout(() => { drawfireline(x,385,'nope'); }, startingdelay+25*7/plusby,'rgb(236,0,0)');
+        setTimeout(() => { drawfireline(x,384,'nope'); }, startingdelay+25*8/plusby,'rgb(234,0,0)');
+        setTimeout(() => { drawfireline(x,382,'nope'); }, startingdelay+25*9/plusby,'rgb(232,0,0)');
+        setTimeout(() => { drawfireline(x,380,'nope'); }, startingdelay+25*10/plusby,'rgb(230,0,0)');
+        setTimeout(() => { drawfireline(x,378,'nope'); }, startingdelay+25*11/plusby,'rgb(227,0,0)');
+        setTimeout(() => { drawfireline(x,376,'nope'); }, startingdelay+25*12/plusby,'rgb(225,0,0)');
+        setTimeout(() => { drawfireline(x,374,'nope'); }, startingdelay+25*13/plusby,'rgb(222,0,0)');
+        setTimeout(() => { drawfireline(x,371,'nope'); }, startingdelay+25*14/plusby,'rgb(218,0,0)');
+        setTimeout(() => { drawfireline(x,368,'nope'); }, startingdelay+25*16/plusby,'rgb(215,0,0)');
+        setTimeout(() => { drawfireline(x,365,'nope'); }, startingdelay+25*17/plusby,'rgb(211,0,0)');
+        setTimeout(() => { drawfireline(x,362,'nope'); }, startingdelay+25*19/plusby,'rgb(206,0,0)');
+        setTimeout(() => { drawfireline(x,358,'nope'); }, startingdelay+25*21/plusby,'rgb(201,0,0)');
+        setTimeout(() => { drawfireline(x,354,'nope'); }, startingdelay+25*23/plusby,'rgb(196,0,0)');
+        setTimeout(() => { drawfireline(x,349,'nope'); }, startingdelay+25*26/plusby,'rgb(190,0,0)');
+        setTimeout(() => { drawfireline(x,344,'nope'); }, startingdelay+25*28/plusby,'rgb(183,0,0)');
+        setTimeout(() => { drawfireline(x,338,'nope'); }, startingdelay+25*31/plusby,'rgb(176,0,0)');
+        setTimeout(() => { drawfireline(x,332,'nope'); }, startingdelay+25*34/plusby,'rgb(168,0,0)');
+        setTimeout(() => { drawfireline(x,325,'nope'); }, startingdelay+25*37/plusby,'rgb(160,0,0)');
+        setTimeout(() => { drawfireline(x,318,'nope'); }, startingdelay+25*41/plusby,'rgb(150,0,0)');
+        setTimeout(() => { drawfireline(x,309,'nope'); }, startingdelay+25*45/plusby,'rgb(140,0,0)');
+        setTimeout(() => { drawfireline(x,300,'nope'); }, startingdelay+25*50/plusby,'rgb(128,0,0)');
+        setTimeout(() => { drawfireline(x,290,'nope'); }, startingdelay+25*55/plusby,'rgb(115,0,0)');
+        setTimeout(() => { drawfireline(x,280,'nope'); }, startingdelay+25*60/plusby,'rgb(101,0,0)');
+        setTimeout(() => { drawfireline(x,267,'nope'); }, startingdelay+25*66/plusby,'rgb(86,0,0)');
+        setTimeout(() => { drawfireline(x,254,'nope'); }, startingdelay+25*73/plusby,'rgb(69,0,0)');
+        setTimeout(() => { drawfireline(x,240,'nope'); }, startingdelay+25*80/plusby,'rgb(51,0,0)');
+        setTimeout(() => { drawfireline(x,224,'nope'); }, startingdelay+25*88/plusby,'rgb(30,0,0)');
+        setTimeout(() => { drawfireline(x,206,'nope'); }, startingdelay+25*97/plusby,'rgb(8,0,0)');
         
         startingdelay = startingdelay+25*97/plusby;
 
-        setTimeout(() => { drawfireline(x,370); }, startingdelay+100*6/plusby,'rgb(204,0,0)');
-        setTimeout(() => { drawfireline(x,340); }, startingdelay+100*20/plusby,'rgb(153,0,0)');
-        setTimeout(() => { drawfireline(x,310); }, startingdelay+100*37/plusby,'rgb(102,0,0)');
-        setTimeout(() => { drawfireline(x,280); }, startingdelay+100*50/plusby,'rgb(51,0,0)');
-        setTimeout(() => { drawfireline(x,250); }, startingdelay+100*75/plusby,'rgb(25,0,0)');
-        setTimeout(() => { drawfireline(x,220); }, startingdelay+100*75/plusby,'rgb(0,0,0)');
-        setTimeout(() => { drawfireline(x,y,1*plusby,false); }, startingdelay+100*52/plusby);
+        setTimeout(() => { drawfireline(x,370,0); }, startingdelay+100*6/plusby,'rgb(204,0,0)');
+        setTimeout(() => { drawfireline(x,340,0); }, startingdelay+100*20/plusby,'rgb(153,0,0)');
+        setTimeout(() => { drawfireline(x,310,0); }, startingdelay+100*37/plusby,'rgb(102,0,0)');
+        setTimeout(() => { drawfireline(x,280,0); }, startingdelay+100*50/plusby,'rgb(51,0,0)');
+        setTimeout(() => { drawfireline(x,250,0); }, startingdelay+100*75/plusby,'rgb(25,0,0)');
+        setTimeout(() => { drawfireline(x,220,0); }, startingdelay+100*75/plusby,'rgb(0,0,0)');
+
 
         setTimeout(() => { drawfireworks(x,y,1*plusby,false); }, startingdelay+100*1/plusby);
         setTimeout(() => { drawfireworks(x,y,2*plusby,false); }, startingdelay+100*2/plusby);
