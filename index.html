@@ -132,7 +132,7 @@
         setTimeout(() => { drawfireline(x,218,'nope'); }, startingdelay+25*94/plusby,'rgb(8,0,0)');
         setTimeout(() => { drawfireline(x,206,'nope'); }, startingdelay+25*97/plusby,'rgb(8,0,0)');
         
-        startingdelay = startingdelay+25*97/plusby-100;
+        startingdelay = startingdelay+25*97/plusby+100;
 
         setTimeout(() => { drawfireline(x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
         setTimeout(() => { drawfireline(x,398,'npe'); }, startingdelay+25*1/plusby,'rgb(252,0,0)');
@@ -288,7 +288,7 @@
         setTimeout(() => { drawfireworks(x,y,97*plusby,false); }, startingdelay+100*97/plusby);
         setTimeout(() => { drawfireworks(x,y,98*plusby,false); }, startingdelay+100*98/plusby);
         
-        startingdelay += startingdelay+100*98/plusby;
+        startingdelay += startingdelay+100*98/plusby-100;
 
         setTimeout(() => { drawfireworks(x,y,1*plusby,true); }, startingdelay+100*1/plusby);
         setTimeout(() => { drawfireworks(x,y,2*plusby,true); }, startingdelay+100*2/plusby);
