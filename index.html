@@ -26,6 +26,145 @@
 
       ctx.fillStyle = 'rgb(0,0,0)';
 
+      function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+      };
+
+      function drawfireworks(red,green,blue,clr,x,y,size,erase){
+
+        if (size > 150){
+          size = 150;
+        }
+
+        ctx.fillStyle = clr;
+        if (erase){
+          ctx.fillStyle = clr;
+        }
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        
+        let angle = 0;
+        while (angle < 360){
+          ctx.lineTo(size * Math.sin(degToRad(angle))+x,size * Math.cos(degToRad(angle))+y);
+          ctx.moveTo(x,y);
+          angle += 10;
+
+        }
+
+        ctx.strokeStyle = 'rgb('+red+', '+green+', '+blue+')';
+        if (erase){
+          ctx.strokeStyle = 'rgb(0,0,0)';
+        }
+        ctx.stroke();
+      }
+      
+      
+      function drawfireline(red,green,blue,x,y,overridecolor){
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(x,y+30);
+        ctx.lineTo(x,y)
+        if (!overridecolor){
+          let red = parseInt()
+          console.log(red,green,blue);
+          ctx.strokeStyle = 'rgb(' + Math.floor((400-y)*255/200) + ', ' + Math.floor((400-y)*green/200) + ', ' + Math.floor((400-y)*blue/200) + ')';
+        } else {
+          ctx.strokeStyle = 'rgb(0, 0, 0)';
+        }
+
+
+        ctx.stroke();
+        ctx.lineWidth = 1;
+      }
+
+      function animatefirework(x,y,startingdelay,plusby,firecolor,red,green,blue){
+
+        console.log('from the first function:',red,green,blue);
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(x,400);
+        
+        var largestcolor;
+        if (red >= green && red >= blue){
+          largestcolor = 'red';
+        } if (green >= red && green >= blue){
+          largestcolor = 'green';
+        } if (blue >= red && blue >= green){
+          largestcolor = 'blue';
+        }
+
+        const sleep = ms => new Promise(res => setTimeout(res, ms)); // await sleep(x) sleeps for x milliseconds
+
+        (async () => {
+          for (let i = (y+198); i >= y; i -= (i-(y-50))/100) {
+            drawfireline(red,green,blue,x,i,false);
+            await sleep(2);
+          }
+        })();
+
+      
+        startingdelay = startingdelay+25*97/plusby+100;
+
+        setTimeout(() => { (async () => {
+          for (let i = (y+198); i >= y; i -= (i-(y-50))/100) {
+            drawfireline(red,green,blue,x,i,'npe');
+            await sleep(2);
+          }
+        })(); }, startingdelay-10*1/plusby);
+        
+        setTimeout(() => { (async () => {
+          for (let i = 0; i < 70; i += (110-i)/100) {
+            drawfireworks(red,green,blue,firecolor,x,y,i*plusby,false);
+
+            if (largestcolor == 'red'){
+              red -= Math.random();
+              green += Math.random();
+              blue += Math.random();
+            }
+            if (largestcolor == 'green'){
+              red += Math.random();
+              green -= Math.random();
+              blue += Math.random();
+            }
+            if (largestcolor == 'blue'){
+              red += Math.random();
+              green += Math.random();
+              blue -= Math.random();
+            }
+            
+            await sleep(Math.random()*10+10);
+          }
+        })(); }, startingdelay-100*1/plusby);
+
+        startingdelay += startingdelay+50*37/plusby+100;
+
+        setTimeout(() => { (async () => {
+          for (let i = 0; i < 90; i += (110-i)/100) {
+            drawfireworks(red,green,blue,firecolor,x,y,i*plusby,true);
+            await sleep(Math.random()*10+10);
+          }
+        })(); }, startingdelay-100*1/plusby);
+
+       }
+
+      let red;
+      let green;
+      let blue;
+      let size;
+      let x;
+      let y;
+
+      function randomfirework(minx,maxx){
+        red = Math.floor(Math.random()*175+80);
+        green = Math.floor(Math.random()*175+80);
+        blue = Math.floor(Math.random()*175+80);
+        size = (Math.random()*2+1);
+        x = (Math.random()*(maxx-minx)+minx);
+        y = (Math.random()*250);
+        animatefirework(x,y,0,size,('rgb('+red+', '+green+', '+blue+')'),red,green,blue);
+      }
+
       function main(){
         delaytime = 2500;
 
@@ -35,27 +174,29 @@
 
         (async () => {
           for (let i = 0; i <= 100; i++) {
-            ctx.fillStyle = 'black';
-            ctx.font = '48px georgia';
-            ctx.fillText(i-1, 300, 200);
-            ctx.fillStyle = 'orange';
-            ctx.font = '48px georgia';
-            ctx.fillText(i, 300, 200);
+            randomfirework(minx,maxx);
+            minx += Math.random()*400+200;
+            maxx += Math.random()*400+200;;
 
-            await sleep(1000);
+            if (minx >= 1200){
+              minx = 50;
+              maxx = 300;
+            }
+
+            await sleep(750);
           }
         })();
 
-        const d = new Date();
-        let time = d.getTime();
-        ctx.fillStyle = 'orange';
+        ctx.fillStyle = 'gold';
         ctx.font = '48px georgia';
-        ctx.fillText('time'+time, 300, 300);
+        ctx.fillText('Happy New Year!', 300, 400);
 
+        console.log('rgb('+red+', '+green+', '+blue+')');
       }
 
       main();
 
+        setTimeout(() => { (async () => { window.location.reload(); })(); }, 75000);
 
     </script>
   </body>
